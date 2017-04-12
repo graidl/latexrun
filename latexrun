@@ -1110,12 +1110,12 @@ class LaTeXFilter:
                 self.__message('info', None,
                                '%s not shown (use -Wall to show them)' %
                                ', '.join(msgs), filename=self.__first_file)
-
-        if eof and len(self.__file_stack) and not self.__fatal_error:
-            # Fatal errors generally cause TeX to "succumb" without
-            # closing the file stack, so don't complain in that case.
-            self.__message('warning', None,
-                           "unbalanced `(' in log; file names may be wrong")
+       ## removed by GR
+       # if eof and len(self.__file_stack) and not self.__fatal_error:
+       #     # Fatal errors generally cause TeX to "succumb" without
+       #     # closing the file stack, so don't complain in that case.
+       #     self.__message('warning', None,
+       #                    "unbalanced `(' in log; file names may be wrong")
         return self
 
     def get_messages(self):
